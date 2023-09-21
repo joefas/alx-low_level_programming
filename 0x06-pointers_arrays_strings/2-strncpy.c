@@ -3,7 +3,7 @@
 #include <stdlib.h>
 
 /**
- * _strcpy - Copies a string to a destination string.
+ * _strncpy - Copies a string to a destination string.
  * @dest: The destination string.
  * @src: The source string to be copied
  * @n: Number of bytes to be copied from src
