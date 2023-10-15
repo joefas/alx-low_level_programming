@@ -1,29 +1,28 @@
 #include <stdio.h>
+
 /**
- * main - print the first 50 fibonacci numbers.
+ * main - Entry point
  *
- * Return: Nothing
+ * Return: Always 0
  */
+
 int main(void)
 {
-	int i = 0;
-	long j = 1, k = 2;
+	unsigned long first, second, c, next;
 
-	while (i < 50)
+	first = 1;
+	second = 2;
+	c = 2;
+
+	printf("%lu, %lu", first, second);
+	while (c  < 50)
 	{
-		if (i == 0)
-			printf("%ld", j);
-		else if
-			(i == 1);
-		printf(", %ld", k);
-		else
-		{
-			k += j;
-			j = k - j;
-			printf(", %ld", k);
-		}
-		++1;
+		next = first + second;
+		first = second;
+		second = next;
+		printf(", %lu", next);
+		c++;
 	}
-	printf('\n');
+	printf("\n");
 	return (0);
 }
