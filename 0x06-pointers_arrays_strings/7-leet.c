@@ -1,28 +1,31 @@
 #include "main.h"
 
 /**
- * leet - Entry point
- * ONE if, TWO loops only
- * @n: input
- * Return: Always 0 (Success)
+ * leet - Encodes a string into 1337
+ * @c: String of variable pointer
+ * Return: String that is encoded
  */
-char *leet(char *n)
-{
-	int i, x;
-	int find[] = {'a', 'A', 'e', 'E', 'o', 'O', 't', 'T', 'l', 'L'};
-	int replacer[] = {'4', '3', '0', '7', '1'};
 
-	for (i = 0; n[i] != '\0'; i++)
+char *leet(char *c)
+{
+	char *cp = c;
+	char key[] = {'A', 'E', 'O', 'T', 'L'};
+	int value[] = {4, 3, 0, 7, 1};
+	unsigned int i;
+
+	while (*c)
 	{
-		for (x = 0; x <= 9; x++)
+		for (i = 0; i < sizeof(key) / sizeof(char); i++)
 		{
-			if (n[i] == find[x])
+			/*32 is the difference between lower case letters and apper case letters*/
+			if (*c == key[i] || *c == key[i] + 32)
 			{
-				n[i] = replacer[x / 2];
-				x = 9;
+				*c = 48 + value[i];
 			}
 		}
+		c++;
 	}
 
-	return (n);
+	return (cp);
+
 }
