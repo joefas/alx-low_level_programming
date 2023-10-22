@@ -7,9 +7,17 @@ global main
 extern printf
 
 main:
+push rbp
+
 sub rsp, 8 ; align stack pointer
-mov rdi, hello_msg
+mov rsi, hello_msg
+mov rax, 0
+mov rdi, fmt
 call printf
+
+pop rbp
+
 add rsp, 8; restore stack pointer
 
+mov rax, 0
 ret
